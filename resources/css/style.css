@@ -1,0 +1,781 @@
+@charset "utf-8";
+/* ------------------------------------------------------------------------------------- */
+
+/* BASIC SETUP  COLOR : #e67e22 */
+
+/* ------------------------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    /* 초기 마진 제거 */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* GENERAL MODULES */
+
+/* ------------------------------------------------------------------------------------- */
+
+
+.clearfix {
+    zoom: 1
+}
+
+/* ul 테그 레벨에 사용되고 하위 li 테그들이 float 테그의 영향을 지워준다 */
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* hidden contents */
+.offScreen, .a11y-hidden{  /* display: none; display:none 의 경우 값 자체가 외부에서 읽히지 않게 됨 visibility: hidden;  값 못 읽음. 화면 자체에서는 보이지 않음. 하지만 있던 영역은 살아있음 */
+    background-color: #777373;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    position: absolute;
+    clip: rect(0,0,0,0);
+    font-size: 0;
+    line-height: 0;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* REUSABLE COMPONENTS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    /* 반응형 디자인 적용을 위해 */
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+
+}
+
+/* ---------------------- */
+
+.box {
+    padding: 1%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300%;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    /*h2 문맥 하단에 존재하는 주황라인 */
+    display: block;
+    /* 지우면 아래 모두 표기 안됨. 블락 안에서 아래 내용 보여라 h2 블락안에 다 잡힘 */
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 200px;
+    margin: 30px auto;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* PARAGRAPHHS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    /* 중앙으로 직접 보내기보다 현재 남은 30%+70% 중 30%의 절반인 15% 마진  */
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%/*글짜 높이 line-weight는 간격 */
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* ICONS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.icon-big {
+    font-size: 350%;
+    padding-left: 38%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    font-size: 100%;
+    padding: 0 10px;
+    display: inline-block;
+    color: #e67e22;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* BUTTONS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    /* 아래 링크 제거 */
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    /* 버튼 이벤트 변형 시, 이펙트를 줄 수 있음 */
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    /*버튼 테두리*/
+    color: #fff;
+    /* 글짜 색 */
+    margin-right: 15px;
+    /* 붙어있는 두개 버튼 간격 조절 */
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    /* 안에 백그라운드 색상만 제거된 */
+    color: #e67e22;
+    /* 글짜색상 */
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #cf6d17;
+    /* 호버 됬을 때 전체 백그라운드 컬러 지정 */
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type=submit] {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+    /* 호버 시, 글짜 색상 변경*/
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* HEADER */
+
+/* ------------------------------------------------------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    /* 회색 인에이블 처리 효과 */
+    background-size: cover;
+    /* 백그라운드 사진으로 전체 덮기  */
+    background-position: center;
+    height: 100vh;
+    /* 해더 사진에 높이 */
+    background-attachment: fixed;
+}
+
+header > #header-fixed {
+    position: fixed;
+    height: auto;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: transparent;
+}
+
+.hero-text-box {
+    position: absolute;
+    /* 안에 굿바이 글짜 사진 위에 배치 */
+    width: 1140px;
+    /* 글자 상자 크기 지정 */
+    top: 50%;
+    /*글자 박스 시작 위치 위, 좌측 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 지정 위치에서 그 반으로 옮김 */
+}
+
+.logo {
+    height: 100px;
+    widows: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* MAIN NAVIGATION */
+
+/* ------------------------------------------------------------------------------------- */
+
+.nav {
+    position: relative;
+}
+
+.main-nav {
+    float: right;
+    /* 오른쪽 구석으로 보내기 */
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    /* li= list 형태로 나타내기 */
+    display: inline-block;
+    /* 일열로 박스 형태로 표기하라 */
+    margin-left: 40px;
+}
+
+/* pesudo-class */
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    /* 버튼 호버시, 라인 이펙트가 글짜 바로 아래 생기는걸 패딩으로 방지*/
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    /* 20px 기준에서 %형태로 크기 줄이기 = 18px */
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    /* 버튼 이펙트 넣기 */
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* mobile navigation */
+
+/* ------------------------------------------------------------------------------------- */
+
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;  /* link 표시 대신 일반 마우스 커서 */
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* STICKY NAVIGATION */
+
+/* ------------------------------------------------------------------------------------- */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 100;
+}
+
+.sticky .main-nav {
+    margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 8px 0;
+    color: #555;
+}
+
+.logo-black { 
+    height: 50px;
+    widows: auto;
+    float: left;
+    margin: 5px 0;
+    display: none;     
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
+
+/* ------------------------------------------------------------------------------------- */
+
+/* FEATURES */
+
+/* ------------------------------------------------------------------------------------- */
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* MEALS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.meal-features {
+    padding: 0;
+    /* 섹션 상단 페딩 0 */
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase > li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* *2 컨테이너 이상의 이미지는 날려버림 */
+    background-color: #000;
+    /* 컨테이너에 백그라운드를 블랙으로 처리 -> 아래 opacity 낮춰서 백그라운드 color가 떠보이게 되는 효과 */
+}
+
+.meal-photo > img {
+    height: auto;
+    width: 100%;
+    transform: scale(1.15);
+    /* 115% *1 1,2번 합작으로 컨테이너 보다 작게 표현되는 이미지 꽉 채울 수 있음 */
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0.7;
+    /* :불투명도 => 30% 낮춤 */
+}
+
+.meal-photo > img:hover {
+    transform: scale(1.03);
+    opacity: 1;
+
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* HOW IT WORKS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.section-steps {
+    background-color: #ffedf0;
+}
+
+.steps-box:first-child {
+    /* Zero class 1번 박스 아이폰 */
+    text-align: right;
+    padding-right: 3%;
+    /* responsive design */
+    margin-top: 30px;
+
+}
+
+.steps-box:last-child {
+    /* 2번 박스 하단 내용들*/
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 210px;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    /* last-child와 비슷한 개념 현재 3번 문구가 지정됨 이렇게 지정하면 위에 50px 마진은 오버라잇됨 */
+    margin-bottom: 80px;
+}
+
+.works-step > div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    /* 들어있는 컨텐츠 크기에 맞춰서 다음 블록이 옆에 불을 수 있도록 한다 */
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    margin-right: 25px;
+    font-size: 150%;
+}
+
+.section-steps > div > div > a > img {
+    width: auto;
+    height: 50px;
+    margin-right: 10px;
+
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* CITIES */
+
+/* ------------------------------------------------------------------------------------- */
+
+.section-cities > div > div > img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.section-cities > div > div .city-feature {
+    margin-bottom: 5px;
+}
+
+.section-cities > div > div > div > i {
+    /* small button */
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+
+    line-height: 120%;
+    /* 각 문장 마다의 높이 = 마진 */
+    vertical-align: middle;
+    /* 수직 정렬: 중앙 위치 */
+    margin-top: -3px;
+}
+
+.section-cities > div > div > div > a:link,
+.section-cities > div > div > div > a:visited {
+    /* link */
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+
+}
+
+.section-cities > div > div > div > a:hover,
+.section-cities > div > div > div > a:active {
+    /* link */
+    color: #555;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+
+}
+
+/* ------<blockquote> 긴 인용문 <cite> 참조 ref. ----------------------------------------- */
+
+/* TESTIMONIALS */
+
+/* ------------------------------------------------------------------------------------- */
+
+.section-testimonial {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover;
+    /* 전체 이미지로 덮기 */
+    color: #fff;
+    background-attachment: fixed;
+    /* 뒷 배경 위치 고정 */
+}
+
+.section-testimonial > div > div > p {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+.section-testimonial > div > div > p:before {
+    /* 강제로 앞쪽에 지정 내용을 위치시키기 */
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    /* 딱 해당 모양만 블락으로 잡기 */
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.section-testimonial > div > div > img {
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px 10px 0;
+    vertical-align: middle;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* SIGNUP HERE */
+
+/* ------------------------------------------------------------------------------------- */
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 3px 5px #e0e0e0;
+    /* x축 y축 blur값 색상 */
+}
+
+.plan-box > div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box > div:first-child {
+    background-color: #fcfcfc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box > div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+.plan-box > div > ul {
+    list-style: none;
+}
+
+.plan-box > div > ul > li {
+    padding: 5px 0;
+
+}
+
+.plan-price {
+    font-size: 300%;
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #e67e22;
+}
+
+.plan-price > span {
+    font-size: 30%;
+    /* parents 즉, plan-price의 300% 폰트사이트에 30% 가 받아짐 */
+    font-weight: 300;
+    /* 변경해주지 않으면 부모의 weight 그대로 가져온다 */
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+
+/* CONTACT FORM */
+
+/* ------------------------------------------------------------------------------------- */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100%;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus { /* input 박스 커서 클릭되었을 때 브라우저에서 주는 효과(블루 보더)제거 */
+    outline: none;
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+
+/* FOOTER */
+
+/* ------------------------------------------------------------------------------------- */
+
+footer {
+    background-color: #333;
+    padding: 45px;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0px;
+}
+
+.footer-nav > li > a:link,
+.footer-nav > li > a:visited,
+.social-links > li > a:link,
+.social-links > li > a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-nav > li > a:hover,
+.footer-nav > li > a:active {
+    color: #ddd;
+}
+
+.social-links > li > a:link,
+.social-links > li > a:visited {
+    font-size: 140%;
+    transition: color 0.2s;
+}
+
+.social-links > li > a > i {
+    transition: color 0.2s;
+}
+
+.social-links > li > a > .ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.social-links > li > a > .ion-social-twitter:hover {
+    color: #00aced;
+}
+
+.social-links > li > a > .ion-social-instagram:hover {
+    color: #517fa4;
+}
+
+.social-links > li > a > .ion-social-google:hover {
+    color: #dd4b39;
+}
+
+footer > div > p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 90%;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* SCROLL ANIMATION */
+
+/* ------------------------------------------------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+    opacity: 0;
+}
+
+.js--wp-4 {
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+    opacity: 1;
+}
+
+
+
