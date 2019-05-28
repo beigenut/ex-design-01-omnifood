@@ -1,14 +1,11 @@
 <p align="center">
-  <a href="https://github.com/beigenut/ex-design-01-omnifood.git">
-    <img src="logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">ex-design-01-omnifood</h3>
-
   <p align="center">
-    Self-learning markup example using jQuery and a bit of pure JS.
+    Self-learning markup example using jQuery and a bit of pure JS. <br> 
+   To check out the website?<a href="https://beigenut.github.io/ex-design-01-omnifood/" target="_blank"> Click here</a> <br>
+   You do not need to sign in or log in at this time :)
 </p>
-
+</p>
 
 
 ## Table of Contents
@@ -54,9 +51,11 @@ This section should list any major frameworks that you built your project using.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
+
 * npm
 ```sh
 npm install npm@latest -g
