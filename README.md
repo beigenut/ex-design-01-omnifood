@@ -12,19 +12,18 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Getting Started](#getting-started)
+* Getting Started
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
 ## About The Project
 
-[![Omnifood Mobile Friendly][product-screenshot]](https://drive.google.com/open?id=1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg)
+[![Omnifood Mobile Friendly][product-screenshot]](https://drive.google.com/uc?export=view&id=1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg)
+
 
 Design and code a site that introduces a restaurant. 
 
@@ -36,6 +35,8 @@ Each section has an various information of restaurant. The last one receives the
 - Use `aminate.css`
 - Use `google font CDN`
 - Insert a `favicon` 
+- Using `git Page` to get web url
+
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -118,4 +119,4 @@ Project Link: [https://github.com/beigenut/ex-design-01-omnifood.git](https://gi
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: https://drive.google.com/file/d/1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg/view?usp=sharing
+[product-screenshot]: https://drive.google.com/uc?export=view&id=1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg
