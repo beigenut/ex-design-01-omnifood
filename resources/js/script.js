@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    alert("This site is mobile optimized.");
     /* for the sticky navigation */
     $('.js--section-features').waypoint(function (direction) {
         if (direction == "down") {
