@@ -24,68 +24,76 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/dbader/readme-template/blob/master/header.png)
+[![Omnifood Mobile Friendly][product-screenshot]](https://drive.google.com/open?id=1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+Design and code a site that introduces a restaurant. 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+Navigation is always at the top of the screen so that easily navigate the site menus. 
+Each section has an various information of restaurant. The last one receives the contents of the users via input elements. 
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue with the tag.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+- Develop a `mobile optimization` site through the JQuery. 
+- Through `JQuery waypoint.js` it activates an animation at a certain point of scrolldown.
+- Use `aminate.css`
+- Use `google font CDN`
+- Insert a `favicon` 
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
+* [Animate.css](https://daneden.github.io/animate.css/)
+* [waypoint.js](http://imakewebthings.com/waypoints/)
+* [google font](https://fonts.google.com/)
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
-* npm
-```sh
-npm install npm@latest -g
-```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-```sh
-git clone https:://github.com/your_username_/Project-Name.git
-```
-3. Install NPM packages
-```sh
-npm install
-```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
-
+No need
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Using JQuery to smoothly move `<a href="">` to a specific element
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+```js
+/* navigation scroll : Select all links with hashes */
+    $('a[href*="#"]')
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function (event) {
+        // On-page links
+        if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) 
+            {   // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function () {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        }
+                    });
+                }
+            }
+        });
+```
 
 
 <!-- CONTRIBUTING -->
@@ -108,29 +116,6 @@ Project Link: [https://github.com/beigenut/ex-design-01-omnifood.git](https://gi
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
-[contributors-shield]: https://img.shields.io/badge/contributors-1-orange.svg?style=flat-square
-[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://choosealicense.com/licenses/mit
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/screenshot.png
+[product-screenshot]: https://drive.google.com/file/d/1-EKgyE-k7kFMYJCGu9ltLdqXOVzgZPLg/view?usp=sharing
